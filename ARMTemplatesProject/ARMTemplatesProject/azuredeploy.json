@@ -10,7 +10,7 @@
     }
   },
   "variables": {
-    "rgNamefullname": "[concat(parameters('rgName'),'karthik']"
+    "rgNamefullname": "[concat(parameters('rgName'),'karthik')]"
   },
   "resources": [
     {
