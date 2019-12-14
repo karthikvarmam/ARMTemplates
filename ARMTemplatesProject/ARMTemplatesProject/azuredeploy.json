@@ -26,7 +26,8 @@
     {
       "type": "Microsoft.Resources/resourceGroups",
       "name": "[variables('resourcegroupfullname')]",
-      "location": "[parameters('rglocation')]"
+      "location": "[parameters('rglocation')]",
+      "apiVersion": "2018-05-01"
 
     }
 
