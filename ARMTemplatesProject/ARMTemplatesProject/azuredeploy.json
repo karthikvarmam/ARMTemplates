@@ -9,15 +9,13 @@
       "type": "string"
     }
   },
-  "variables": {
-    "rgNamefullname": "[concat(parameters('rgName'),'karthik')]"
-  },
+  "variables": {},
   "resources": [
     {
       "type": "Microsoft.Resources/resourceGroups",
       "apiVersion": "2018-05-01",
       "location": "[parameters('rgLocation')]",
-      "name": "[variables('rgNamefullname')]",
+      "name": "[concat(parameters('rgName'),parameters('rgLocation'))]",
       "properties": {}
     }
   ],
