@@ -1,36 +1,23 @@
 {
   "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
-  "contentVersion": "1.0.0.0",
+  "contentVersion": "1.0.0.1",
   "parameters": {
-    "resourceGroupName": {
-      "type": "string",
-      "minLength": 2,
-      "maxLength": 10,
-      "metadata": {
-        "description": "Enter Resource group prefix value"
-      }
+    "rgName": {
+      "type": "string"
     },
-      "rglocation": {
-        "type": "string",
-        "allowedValues": [ "UK West", "UK South" ],
-        "metadata": {
-          "description": "Enter UK west or UK South"
-        }
-
-      }
+    "rgLocation": {
+      "type": "string"
+    }
   },
-  "variables": {
-    "resourcegroupfullname": "[concat(parameters('resourceGroupName'),subscription().id)]"
-  },
+  "variables": {},
   "resources": [
     {
       "type": "Microsoft.Resources/resourceGroups",
-      "name": "[variables('resourcegroupfullname')]",
-      "location": "[parameters('rglocation')]",
-      "apiVersion": "2018-05-01"
-
+      "apiVersion": "2018-05-01",
+      "location": "[parameters('rgLocation')]",
+      "name": "[parameters('rgName')]",
+      "properties": {}
     }
-
-  ]
-
+  ],
+  "outputs": {}
 }
